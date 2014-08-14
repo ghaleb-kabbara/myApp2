@@ -140,44 +140,7 @@ $( document ).on( "pagecreate", ".jqm-demos", function( event ) {
 		}, 0 );
 	}
 	
-	$( "#leave-form" ).validate({
-			messages: {
-				name: "Please enter your name.",
-				position: "Please enter your position.",
-				department: "Please select your department.",
-				employee_nos: "Please enter your employee number.",
-				joining_date: "Please select your joining date.",
-				start_date: "Please select the start date.",
-				end_date: "Please select the end date.",
-				no_days: "Please enter the number of days.",
-				explanation: "Please enter the explanation/reason.",
-				guarantee: "Please enter guarantee on behalf of absence."
-			},
-			errorPlacement: function( error, element ) {
-				error.insertAfter( element.parent() );
-			},
-			submitHandler: function() {
-				var postData = $(this).serialize();
-				//alert('test');
-				
-				$.ajax({
-					type: 'POST',
-					data: postData,
-					url: 'http://mmgme.com/mmgapp/process.php',
-					success: function(data){
-						console.log(data);
-						alert('Email was sent');
-						window.location.href="index.html";
-					},
-					error: function(){
-						console.log(data);
-						alert('Email failed');
-					}
-				});
-				
-				return false;        
-			}
-		});
+	
 });
 
 // Append keywords list to each list item
